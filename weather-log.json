@@ -1,0 +1,13 @@
+{
+    "name": "weather-log-json",
+    "description": "weather log",
+    "version": "1.0.0",
+    "main": "weather-log.js",
+    "scripts": {
+        "start": "node weather-log.js",
+        "test": "jest test"
+    },
+    "dependencies": {
+        "express": "^4.17.1"
+      }
+}
