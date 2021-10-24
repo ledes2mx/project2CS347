@@ -14,7 +14,6 @@ service.get('/log/:day', (request, response) => {
         ok: true,
         results: {
             log: request.params.day,
-            count: weatherLogs[request.params.day] ?? 0,
         },
     });
 });
