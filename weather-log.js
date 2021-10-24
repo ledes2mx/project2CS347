@@ -1,6 +1,18 @@
 const express = require('express');
 const weatherLogs = {};
+const fs = require('fs');
 const service = express();
+const json = fs.readFileSync('credentials.json', 'utf8');
+const mysql = require('mysql');
+const credentials = JSON.parse(json);
+
+const connection = mysql.createConnection(credentials);
+connection.connect(error => {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    }
+});
 
 service.get('/log', (request, response) => {
     response.json({
