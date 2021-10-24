@@ -4,5 +4,5 @@ CREATE TABLE logs(
     day VARCHAR(100),
     temp INT,
     weather VARCHAR(50),
-    is_deleted INT DEFAULT 0,
+    is_deleted INT DEFAULT 0
 );
