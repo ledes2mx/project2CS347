@@ -8,6 +8,7 @@
         "test": "jest test"
     },
     "dependencies": {
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "mysql": "^8.0.26"
       }
 }
