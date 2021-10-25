@@ -1,8 +1,10 @@
 DROP TABLE IF EXISTS logs;
 CREATE TABLE logs(
     id SERIAL PRIMARY KEY,
-    day VARCHAR(100),
+    day INT,
+    month VARCHAR(9),
+    year INT,
     temp INT,
-    weather VARCHAR(50),
+    weather TEXT,
     is_deleted INT DEFAULT 0
 );
