@@ -24,14 +24,27 @@ function rowToLog(row){
         weather: row.weather,
     };
 }
-/*
+
 service.get('/log', (request, response) => {
-    response.json({
-        ok: true,
-        results: weatherLogs,
+    const query = 'SELECT * FROM logs';
+    connection.query(query, (error, rows) => {
+        if (error) {
+            response.status(500);
+            response.json ({
+                ok: false,
+                results: error.message,
+            });
+        }
+        else {
+            const log = rows.map(rowToLog);
+            response.json ({
+                ok: true,
+                results: rows.map(rowToLog)
+            });
+        }
     });
 });
-*/
+
 
 service.get('/log/:day/:month/:year', (request, response) => {
     const parameters = [
@@ -61,7 +74,10 @@ service.get('/log/:day/:month/:year', (request, response) => {
 
 
 service.post('/log', (request, response) => {
-    if (request.body.hasOwnProperty('day') && request.body.hasOwnProperty('month') && request.body.hasOwnProperty('year') && request.body.hasOwnProperty('weather')) {
+    if (request.body.hasOwnProperty('day') &&
+    request.body.hasOwnProperty('month') &&
+    request.body.hasOwnProperty('year') &&
+    request.body.hasOwnProperty('weather')) {
         const parameters = [
             request.body.day,
             request.body.month,
