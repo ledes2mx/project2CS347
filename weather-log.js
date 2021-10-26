@@ -8,6 +8,11 @@ const mysql = require('mysql');
 const credentials = JSON.parse(json);
 service.use(express.json());
 
+service.use((request, response, next) => {
+    response.set('Access-Control-Allow-Origin', '*');
+    next();
+});
+
 const connection = mysql.createConnection(credentials);
 connection.connect(error => {
     if (error) {
