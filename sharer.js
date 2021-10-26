@@ -1,4 +1,5 @@
 const textbox = document.getElementById('textbox');
+const service = express();
 
 function assertResponse(response) {
   if (response.status >= 200 || response.status < 300) {
