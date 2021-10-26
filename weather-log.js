@@ -1,7 +1,7 @@
 const express = require('express');
 const weatherLogs = {};
 const fs = require('fs');
-const { request } = require('http');
+const { request } = require('https');
 const service = express();
 const json = fs.readFileSync('credentials.json', 'utf8');
 const mysql = require('mysql');
