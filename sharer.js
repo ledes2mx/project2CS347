@@ -8,7 +8,7 @@ function assertResponse(response) {
   }
 }
 
-fetch('https://project2.miguelcodessometimes.me:8443/log')
+fetch('http://project2.miguelcodessometimes.me:8443/log')
   .then(assertResponse)
   .then(response => response.text())
   .then(data => textbox.innerText = data)
