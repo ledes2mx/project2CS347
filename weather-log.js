@@ -31,9 +31,11 @@ connection.connect(error => {
 
 function rowToLog(row){
     return {
+        id: row.id,
         day: row.day,
         month: row.month,
         year: row.year,
+        temp: row.temp,
         weather: row.weather,
     };
 }
