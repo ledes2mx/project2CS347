@@ -131,10 +131,11 @@ service.patch('/log/:id', (request, response) => {
         request.body.day,
         request.body.month,
         request.body.year,
+        request.body.temp,
         request.body.weather,
         parseInt(request.params.id),
     ];
-    const query = 'UPDATE log SET day = ?, month = "?", year = ?, weather = ? WHERE id = ?';
+    const query = 'UPDATE log SET day = ?, month = "?", year = ?, temp = ?, weather = "?" WHERE id = ?';
 
     connection.query(query, parameters, (error, result) => {
         if (error) {
