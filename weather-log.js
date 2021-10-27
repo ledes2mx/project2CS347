@@ -88,6 +88,7 @@ service.post('/log', (request, response) => {
     if (request.body.hasOwnProperty('day') &&
     request.body.hasOwnProperty('month') &&
     request.body.hasOwnProperty('year') &&
+    request.body.hasOwnProperty('temp') &&
     request.body.hasOwnProperty('weather')) {
         const parameters = [
             request.body.day,
