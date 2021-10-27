@@ -97,7 +97,7 @@ service.post('/log', (request, response) => {
             request.body.weather,
         ];
 
-        const query = 'INSERT INTO logs(day, month, year, temp, weather) VALUES (?, ?, ?, ?, ?)';
+        const query = 'INSERT INTO logs(day, month, year, temp, weather) VALUES (?, "?", ?, ?, "?")';
         connection.query(query, parameters, (error, result) => {
             if (error) {
                 response.status(500);
@@ -131,7 +131,7 @@ service.patch('/log/:id', (request, response) => {
         request.body.weather,
         parseInt(request.params.id),
     ];
-    const query = 'UPDATE log SET day = ?, month = ?, year = ?, weather = ? WHERE id = ?';
+    const query = 'UPDATE log SET day = ?, month = "?", year = ?, weather = ? WHERE id = ?';
 
     connection.query(query, parameters, (error, result) => {
         if (error) {
