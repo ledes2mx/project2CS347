@@ -6,6 +6,8 @@ const service = express();
 const json = fs.readFileSync('credentials.json', 'utf8');
 const mysql = require('mysql');
 const credentials = JSON.parse(json);
+
+
 service.use(express.json());
 
 service.use((request, response, next) => {
@@ -37,7 +39,7 @@ function rowToLog(row){
 }
 
 service.get('/log', (request, response) => {
-    const query = 'SELECT * FROM logs';
+    const query = 'SELECT * FROM logs WHERE is_deleted = 0';
     connection.query(query, (error, rows) => {
         if (error) {
             response.status(500);
