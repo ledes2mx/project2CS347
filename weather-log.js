@@ -93,10 +93,11 @@ service.post('/log', (request, response) => {
             request.body.day,
             request.body.month,
             request.body.year,
+            request.body.temp,
             request.body.weather,
         ];
 
-        const query = 'INSERT INTO logs(day, month, year, weather) VALUES (?, ?, ?, ?)';
+        const query = 'INSERT INTO logs(day, month, year, temp, weather) VALUES (?, ?, ?, ?, ?)';
         connection.query(query, parameters, (error, result) => {
             if (error) {
                 response.status(500);
