@@ -40,6 +40,10 @@ function rowToLog(row){
     };
 }
 
+service.get('/report.html', (request, response) => {
+    response.sendFile('report.html');
+});
+
 service.get('/log', (request, response) => {
     const query = 'SELECT * FROM logs WHERE is_deleted = 0';
     connection.query(query, (error, rows) => {
