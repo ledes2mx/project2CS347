@@ -23,5 +23,14 @@
             <li>Having my service respond to https://project2.miguelcodessometimes.me:8443/report.html</li>
         </ul>
         <h4>These are the parameters for each thing</h4>
+        <p>For the GET requests, you can either..</p>
+        <ul>
+            <li>request https://project2.miguelcodessometimes.me:8443/log</li>
+            <li>request https://project2.miguelcodessometimes.me:8443/log/:day/:month/:year</li>
+        </ul>
+        <p>Day is a number, month is a string, year is a number.</p>
+        <p>For posting, you must have the day(a number), the month(a string), a year( a number), a temperatrue(as temp(a number)), and the weather(any text).</p>
+        <p>For a patch request, you must do https://project2.miguelcodessometimes.me:8443/log/:id where :id is a number that is shown in the get request. You must have all the parameters above in the post to see the change.</p>
+        <p>For the delete request, all you have to have to delete something is the id. So you would use https://project2.miguelcodessometimes.me:8443/log/:id to delete an entry.</p>
     </body>
 </html>
