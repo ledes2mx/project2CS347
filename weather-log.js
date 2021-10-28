@@ -41,7 +41,7 @@ function rowToLog(row){
 }
 
 service.get('/report.html', (request, response) => {
-    response.sendFile('report.html', {root: "/project2CS347"});
+    response.sendFile('report.html', {root: "/home/project2CS347"});
 });
 
 service.get('/log', (request, response) => {
