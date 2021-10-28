@@ -41,7 +41,7 @@ function rowToLog(row){
 }
 
 service.get('/report.html', (request, response) => {
-    response.sendFile('report.html', "can't get the ting");
+    response.sendFile('report.html', {root: project2CS347});
 });
 
 service.get('/log', (request, response) => {
