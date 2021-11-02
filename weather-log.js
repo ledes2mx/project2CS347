@@ -67,9 +67,9 @@ service.get('/log', (request, response) => {
 
 service.get('/log/:day/:month/:year', (request, response) => {
     const parameters = [
-        parseInt(request.params.day),
-        parseInt(request.params.month),
-        parseInt(request.params.year),
+        request.body.day,
+        request.body.month,
+        request.body.year,
     ];
     const query = 'SELECT * FROM logs WHERE day = ? AND month = "?" AND year = ? AND is_deleted = 0 ORDER BY year DESC';
 
