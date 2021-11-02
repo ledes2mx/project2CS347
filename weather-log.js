@@ -85,7 +85,7 @@ service.get('/log/:day/:month/:year', (request, response) => {
             const log = rows.map(rowToLog);
             response.json({
                 ok: true,
-                results: log,
+                results: rows.map(rowToLog),
             });
         }
     });
