@@ -65,7 +65,7 @@ service.get('/log', (request, response) => {
 });
 
 
-service.get('/specf-log/:day/:month/:year', (request, response) => {
+service.get('/log/:day/:month/:year', (request, response) => {
     const parameters = [
         parseInt(request.params.day),
         parseInt(request.params.month),
