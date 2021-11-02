@@ -141,7 +141,7 @@ service.patch('/log/:id', (request, response) => {
         request.body.weather,
         parseInt(request.params.id),
     ];
-    const query = 'UPDATE logs SET day = ?, month = "?", year = ?, temp = ?, weather = "?" WHERE id = ?';
+    const query = 'UPDATE logs SET day = ?, month = ?, year = ?, temp = ?, weather = ? WHERE id = ?';
 
     connection.query(query, parameters, (error, result) => {
         if (error) {
