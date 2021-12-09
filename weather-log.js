@@ -133,6 +133,7 @@ service.post('/log', (request, response) => {
 });
 
 service.patch('/log/:id', (request, response) => {
+    console.log(request);
     const parameters = [
         request.body.day,
         request.body.month,
